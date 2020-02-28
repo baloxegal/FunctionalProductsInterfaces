@@ -6,7 +6,7 @@ public class Product {
     private Float price;
     private Integer quantity;
 	
-    private Product(String category, String name, Float price, Integer quantity) {
+    public Product(String category, String name, Float price, Integer quantity) {
 		super();
 		this.category = category;
 		this.name = name;
