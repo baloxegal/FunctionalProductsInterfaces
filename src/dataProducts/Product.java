@@ -1,6 +1,6 @@
 package dataProducts;
 
-public class Product {
+public class Product implements Cloneable /*Cloneable pentru varianta cu return obiect Product*/ {
 	private String category;
     private String name;
     private Float price;
@@ -16,7 +16,7 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [category=" + category + ", name=" + name + ", price=" + price + ", quantity=" + quantity + "]";
+		return "category: " + category + ", name: " + name + ", price:" + (float)((int)(price * 100))/100 + ", quantity: " + quantity;
 	}
 
 	public String getCategory() {
@@ -49,5 +49,11 @@ public class Product {
 
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
+	}
+
+	@Override
+	public Product clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return (Product) super.clone();
 	}
 }
